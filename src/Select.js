@@ -44,7 +44,7 @@ class Select extends Component {
                         onKeyPress(e);
                     },
                     onKeyDown: e => {
-                        let value;
+                        let currentItem;
                         if (!isAutocompleteOpen) {
                             this._showAC();
                         }
@@ -72,9 +72,10 @@ class Select extends Component {
                         // Enter
                         if (e.which === 13) {
                             if (selectedIndex >= 0 || selectedIndex < items.length) {
-                                value = this.getSuggestionValue(items[selectedIndex]);
-                                this.setState({value, isAutocompleteOpen: false});
-                                onSelect(value)
+                                currentItem = items[selectedIndex];
+
+                                this.setState({value: this.getSuggestionText(currentItem), isAutocompleteOpen: false});
+                                onSelect(this.getSuggestionValue(currentItem))
                             }
                         }
 
