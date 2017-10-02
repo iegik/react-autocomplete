@@ -4,7 +4,7 @@ Select container with autocomplete list and `search` method
 ### Install
 
 ```
-npm install eact-autocomplete-field
+npm install react-autocomplete-field
 ```
 
 ### Usage
