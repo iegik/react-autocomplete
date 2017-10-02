@@ -1,0 +1,40 @@
+{
+  "name": "react-autocomplete",
+  "version": "1.0.0",
+  "description": "Select container with autocomplete list and search method",
+  "main": "index.js",
+  "devDependencies": {
+    "babel-jest": "20.0.3",
+    "babel-preset-react-native": "2.0.0"
+  },
+  "files": [
+    "Select.js",
+    "TextInput.js",
+    "List.js",
+    "ListItem.js",
+    "map.js",
+    "index.js"
+  ],
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iegik/react-autocomplete.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "select",
+    "react",
+    "react-native"
+  ],
+  "author": "Arturs Jansons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iegik/react-autocomplete/issues"
+  },
+  "homepage": "https://github.com/iegik/react-autocomplete#readme"
+}
