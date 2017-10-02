@@ -1,6 +1,14 @@
 # react-autocomplete
 Select container with autocomplete list and `search` method
 
+### Install
+
+```
+npm install eact-autocomplete-field
+```
+
+### Usage
+
 ```javascript
 import React from 'react';
 import {Select, List, ListItem, TextInput} from 'react-autocomplete-field';
@@ -21,3 +29,10 @@ class CountryAutocomplete extends Select {
 }
 export default CountryAutocomplete;
 ```
+
+*Props*
+
+* `value` - as in usual input
+* `onSelect` - fires when value was chosen from list
+* `onChange` - fires while value changes, as you type
+* `onError` - fires when error was thrown in `search` method
