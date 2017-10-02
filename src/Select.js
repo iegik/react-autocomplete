@@ -95,15 +95,13 @@ class Select extends Component {
                     },
                 })}
                 {isAutocompleteOpen ? this.renderAutocomplete({
-                    getItemText: this.getSuggestionText,
-                    getItemValue: this.getSuggestionValue,
                     items,
                     selectedIndex,
                     renderItem: this.renderAutocompleteItem,
                     value,
-                    onSelect: value => {
-                        this.setState({value});
-                        onSelect(value)
+                    onSelect: item => {
+                        this.setState({value: this.getSuggestionText(item)});
+                        onSelect(this.getSuggestionValue(item))
                     },
                 }) : null}
             </div>
