@@ -10,6 +10,7 @@ class Select extends Component {
     };
 
     search = text => new Promise(resolve => resolve([text]));
+    getSuggestionText = item => item;
     getSuggestionValue = item => item;
 
     _showAC = () => this.setState({isAutocompleteOpen: true});
@@ -94,6 +95,7 @@ class Select extends Component {
                     },
                 })}
                 {isAutocompleteOpen ? this.renderAutocomplete({
+                    getItemText: this.getSuggestionText,
                     getItemValue: this.getSuggestionValue,
                     items,
                     selectedIndex,
