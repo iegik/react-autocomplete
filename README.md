@@ -1,7 +1,7 @@
 # react-autocomplete
 Select container with autocomplete list and `search` method
 
-```
+```javascript
 import React from 'react';
 import AutocompleteSelect from './Select';
 import AutocompleteList from './List';
