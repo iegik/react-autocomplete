@@ -3,28 +3,37 @@
   "version": "1.0.0",
   "description": "Select container with autocomplete list and search method",
   "main": "index.js",
-  "dependences": {
-    "react": "^15.6.1"
+  "babel": {
+    "presets": [
+      "es2015-rollup",
+      "stage-0",
+      "stage-1",
+      "react"
+    ]
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "babel-runtime": "^6.11.6"
   },
   "devDependencies": {
-    "babel-core": "6.25.0",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "babel-preset-latest": "6.24.1",
-    "babel-preset-stage-0": "6.24.1"
+    "babel-cli": "^6.25.0",
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "del": "^2.2.2",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1"
   },
-  "files": [
-    "Select.js",
-    "TextInput.js",
-    "List.js",
-    "ListItem.js",
-    "map.js",
-    "index.js"
-  ],
   "directories": {
-    "example": "example"
+    "dist": "dist",
+    "src": "src"
   },
   "scripts": {
+    "build": "node tools/build",
+    "prepublish": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

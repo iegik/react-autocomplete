@@ -1,7 +1,7 @@
 import React from 'react';
-import AutocompleteSelect from '../Select';
-import AutocompleteList from '../List';
-import AutocompleteListItem from '../ListItem';
+import AutocompleteSelect from '../src/Select';
+import AutocompleteList from '../src/List';
+import AutocompleteListItem from '../src/ListItem';
 import AutocompleteInput from '../Input';
 
 // FIXME: Returns Promise with object `{suggestions: [{value: String}]}`
