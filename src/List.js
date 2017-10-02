@@ -5,7 +5,6 @@ export default ({
     items = [],
     selectedIndex = -1,
     getItemText = i => i,
-    getItemValue = i => i,
     renderItem = i => i,
     onSelect = () => {},
     ...rest,
@@ -14,8 +13,7 @@ export default ({
         {items.length ? map(items, (item, key) =>
             renderItem({
                 key,
-                onMouseDown: () => onSelect(getItemValue(item), key),
-                item,
+                onMouseDown: () => onSelect(item),
                 selectedIndex,
                 value: getItemText(item),
             })

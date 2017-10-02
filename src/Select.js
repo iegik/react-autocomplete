@@ -99,6 +99,7 @@ class Select extends Component {
                     selectedIndex,
                     renderItem: this.renderAutocompleteItem,
                     value,
+                    getItemText: this.getSuggestionText,
                     onSelect: item => {
                         this.setState({value: this.getSuggestionText(item)});
                         onSelect(this.getSuggestionValue(item))
