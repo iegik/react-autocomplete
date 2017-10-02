@@ -4,7 +4,7 @@
   "description": "Select container with autocomplete list and search method",
   "main": "index.js",
   "dependences": {
-    "react": "^15.6.1",
+    "react": "^15.6.1"
   },
   "devDependencies": {
     "babel-core": "6.25.0",
