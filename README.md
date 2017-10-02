@@ -3,22 +3,20 @@ Select container with autocomplete list and `search` method
 
 ```javascript
 import React from 'react';
-import AutocompleteSelect from './Select';
-import AutocompleteList from './List';
-import AutocompleteListItem from './ListItem';
-import AutocompleteInput from './Input';
+import {Select, List, ListItem, TextInput} from 'react-autocomplete-field';
 import {getCountrySuggestions} from '../../api/ddata-api';
 
-class CountryAutocomplete extends AutocompleteSelect {
-    renderInput = AutocompleteInput;
+class CountryAutocomplete extends Select {
+    renderInput = TextInput;
 
-    renderAutocomplete = AutocompleteList;
+    renderAutocomplete = List;
 
-    renderAutocompleteItem = AutocompleteListItem;
+    renderAutocompleteItem = ListItem;
 
     // This will fill `items` property while typing
     search = text => getCountrySuggestions(text).then(({suggestions}) => suggestions);
 
+    // This is for getting values from each suggestion
     getSuggestionValue = item => item.value;
 }
 export default CountryAutocomplete;
