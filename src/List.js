@@ -4,6 +4,7 @@ import map from './map';
 export default ({
     items = [],
     selectedIndex = -1,
+    getItemText = i => i,
     getItemValue = i => i,
     renderItem = i => i,
     onSelect = () => {},
@@ -16,7 +17,7 @@ export default ({
                 onMouseDown: () => onSelect(getItemValue(item), key),
                 item,
                 selectedIndex,
-                value: getItemValue(item),
+                value: getItemText(item),
             })
         ) : (
             renderItem()
