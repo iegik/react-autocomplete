@@ -21,13 +21,13 @@ class Select extends Component {
     };
 
     render() {
-        let {onFocus, onBlur, onChange, onKeyPress, onKeyDown, onMouseDown, onError, ...rest} = this.props;
+        let {onFocus, onBlur, onChange, onKeyDown, onMouseDown, onError, ...rest} = this.props;
         let {items, value, selectedIndex, isAutocompleteOpen} = this.state;
         return (
             <div>
                 {this.renderInput({
                     ...rest,
-                    value: this.props.value || value,
+                    value,
                     onFocus: e => {
                         this._showAC();
                         onFocus(e);
@@ -42,10 +42,6 @@ class Select extends Component {
                             .then(items => this.setState({items}))
                             .catch(onError);
                         onChange(e)
-                    },
-                    onKeyPress: e => {
-                        this.setState({value});
-                        onKeyPress(e);
                     },
                     onKeyDown: e => {
                         let currentItem;
@@ -86,11 +82,9 @@ class Select extends Component {
                             this._hideAC();
                         }
 
-                        this.setState({value});
                         onKeyDown(e);
                     },
                     onMouseDown: e => {
-                        this.setState({value});
                         if (!isAutocompleteOpen) {
                             this._showAC();
                         }
@@ -115,7 +109,6 @@ Select.defaultProps = {
     onFocus: () => {},
     onBlur: () => {},
     onChange: () => {},
-    onKeyPress: () => {},
     onKeyDown: () => {},
     onMouseDown: () => {},
     onError: () => {},
