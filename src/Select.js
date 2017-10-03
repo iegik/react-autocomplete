@@ -15,6 +15,10 @@ class Select extends Component {
 
     _showAC = () => this.setState({isAutocompleteOpen: true});
     _hideAC = () => this.setState({isAutocompleteOpen: false});
+    _select = item => {
+        this.setState({value: this.getSuggestionText(item), isAutocompleteOpen: false});
+        this.props.onSelect(this.getSuggestionValue(item))
+    };
 
     render() {
         let {onFocus, onBlur, onChange, onKeyPress, onKeyDown, onMouseDown, onError, onSelect, ...rest} = this.props;
@@ -73,9 +77,7 @@ class Select extends Component {
                         if (e.which === 13) {
                             if (selectedIndex >= 0 || selectedIndex < items.length) {
                                 currentItem = items[selectedIndex];
-
-                                this.setState({value: this.getSuggestionText(currentItem), isAutocompleteOpen: false});
-                                onSelect(this.getSuggestionValue(currentItem))
+                                this._select(currentItem)
                             }
                         }
 
@@ -101,10 +103,7 @@ class Select extends Component {
                     renderItem: this.renderAutocompleteItem,
                     value,
                     getItemText: this.getSuggestionText,
-                    onSelect: item => {
-                        this.setState({value: this.getSuggestionText(item)});
-                        onSelect(this.getSuggestionValue(item))
-                    },
+                    onSelect: this._select,
                 }) : null}
             </div>
         );
