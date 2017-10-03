@@ -21,13 +21,13 @@ class Select extends Component {
     };
 
     render() {
-        let {onFocus, onBlur, onChange, onKeyPress, onKeyDown, onMouseDown, onError, onSelect, ...rest} = this.props;
+        let {onFocus, onBlur, onChange, onKeyPress, onKeyDown, onMouseDown, onError, ...rest} = this.props;
         let {items, value, selectedIndex, isAutocompleteOpen} = this.state;
         return (
             <div>
                 {this.renderInput({
                     ...rest,
-                    value,
+                    value: this.props.value || value,
                     onFocus: e => {
                         this._showAC();
                         onFocus(e);
