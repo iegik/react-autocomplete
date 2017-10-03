@@ -21,7 +21,7 @@ class Select extends Component {
     };
 
     render() {
-        let {onFocus, onBlur, onChange, onKeyDown, onMouseDown, onError, ...rest} = this.props;
+        let {onFocus, onBlur, onChange, onKeyDown, onMouseDown, onError, onSelect, ...rest} = this.props;
         let {items, value, selectedIndex, isAutocompleteOpen} = this.state;
         return (
             <div>
