@@ -36,3 +36,7 @@ export default CountryAutocomplete;
 * `onSelect` - fires when value was chosen from list
 * `onChange` - fires while value changes, as you type
 * `onError` - fires when error was thrown in `search` method
+
+---
+
+- https://gist.github.com/iegik/a23e38a997706b53e54f16e0d6caf9f4
