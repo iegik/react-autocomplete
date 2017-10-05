@@ -8,17 +8,15 @@ export default ({
     renderItem = i => i,
     onSelect = () => {},
     ...rest,
-}) => (
+}) => items.length ? (
     <div {...{...rest, className: 'react-dadata__suggestions'}}>
-        {items.length ? map(items, (item, key) =>
+        {map(items, (item, key) =>
             renderItem({
                 key,
                 onMouseDown: () => onSelect(item),
                 selectedIndex,
                 value: getItemText(item),
             })
-        ) : (
-            renderItem()
         )}
     </div>
-);
+) : null ;
