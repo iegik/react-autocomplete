@@ -29,6 +29,9 @@ class Select extends Component {
                     ...rest,
                     value,
                     onFocus: e => {
+                        this.search(e.target.value)
+                            .then(items => this.setState({items}))
+                            .catch(onError);
                         this._showAC();
                         onFocus(e);
                     },
