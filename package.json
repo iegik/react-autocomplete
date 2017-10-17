@@ -1,6 +1,6 @@
 {
   "name": "react-autocomplete-field",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Select container with autocomplete list and search method",
   "main": "index.js",
   "babel": {

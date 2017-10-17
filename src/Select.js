@@ -40,7 +40,7 @@ class Select extends Component {
                         onBlur(e);
                     },
                     onChange: e => {
-                        this.setState({value: e.target.value});
+                        this.setState({value: e.target.value, items: []});
                         this.search(e.target.value)
                             .then(items => this.setState({items}))
                             .catch(onError);
